@@ -1,0 +1,304 @@
+:root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #e6edf1;
+    --panel: #f7fafb;
+    --ink: #12283a;
+    --mute: #5d7384;
+    --line: #b9c8d2;
+    --hi: #0b8f7f;
+    --hi-t: #fff;
+    --lo: #b4c3cd;
+    --lo-t: #35495a;
+    --acc: #d9822b
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #13202b;
+        --panel: #1b2c3a;
+        --ink: #e3edf3;
+        --mute: #8da3b3;
+        --line: #2b4152;
+        --hi: #2ec4b0;
+        --hi-t: #06231f;
+        --lo: #47606f;
+        --lo-t: #d3e0e8;
+        --acc: #f0a050
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #13202b;
+    --panel: #1b2c3a;
+    --ink: #e3edf3;
+    --mute: #8da3b3;
+    --line: #2b4152;
+    --hi: #2ec4b0;
+    --hi-t: #06231f;
+    --lo: #47606f;
+    --lo-t: #d3e0e8;
+    --acc: #f0a050
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-attachment: fixed
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 16px 40px
+}
+
+h1 {
+    font: 700 1.7rem/1.2 Georgia, serif;
+    margin: 0 0 4px
+}
+
+.sub {
+    color: var(--mute);
+    margin: 0 0 16px;
+    max-width: 62ch
+}
+
+.tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px
+}
+
+button {
+    font: inherit
+}
+
+.tabs button,
+.ctl button {
+    border: 1.5px solid var(--ink);
+    background: var(--panel);
+    color: var(--ink);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.tabs button[aria-selected=true] {
+    background: var(--ink);
+    color: var(--panel)
+}
+
+:focus-visible {
+    outline: 3px solid var(--acc);
+    outline-offset: 2px
+}
+
+.panel {
+    background: var(--panel);
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 14px
+}
+
+.inputs {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: flex-end
+}
+
+.inputs:empty {
+    display: none
+}
+
+.inp label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px
+}
+
+.row {
+    display: flex;
+    gap: 6px;
+    align-items: center
+}
+
+.row input {
+    width: 64px;
+    padding: 6px;
+    font: inherit;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--ink)
+}
+
+.bt {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1.5px solid var(--ink);
+    font: 700 1rem monospace;
+    cursor: pointer;
+    background: var(--lo);
+    color: var(--lo-t)
+}
+
+.bt.on {
+    background: var(--hi);
+    color: var(--hi-t)
+}
+
+.dg {
+    overflow-x: auto
+}
+
+.dg svg {
+    display: block;
+    min-width: 620px;
+    width: 100%;
+    height: auto
+}
+
+.w {
+    fill: none;
+    stroke: var(--lo);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-linecap: round
+}
+
+.w1 {
+    stroke: var(--hi)
+}
+
+.jn {
+    fill: var(--lo)
+}
+
+.j1 {
+    fill: var(--hi)
+}
+
+.gate {
+    fill: var(--panel);
+    stroke: var(--ink);
+    stroke-width: 2
+}
+
+.gate2 {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2
+}
+
+.gl {
+    font: 600 10px "Trebuchet MS", sans-serif;
+    fill: var(--mute);
+    text-anchor: middle
+}
+
+.bx {
+    fill: var(--panel);
+    stroke: var(--ink);
+    stroke-width: 2
+}
+
+.bx.big {
+    fill: var(--bg)
+}
+
+.t {
+    font: 600 12px "Trebuchet MS", sans-serif;
+    fill: var(--ink)
+}
+
+.bt2 {
+    font: 700 15px Georgia, serif;
+    fill: var(--ink)
+}
+
+.mono {
+    font: 700 15px monospace;
+    fill: var(--ink)
+}
+
+.n {
+    stroke: var(--ink);
+    stroke-width: 2
+}
+
+.n0 {
+    fill: var(--lo)
+}
+
+.n1 {
+    fill: var(--hi)
+}
+
+.nv {
+    font: 700 14px monospace;
+    fill: var(--ink);
+    text-anchor: middle;
+    pointer-events: none
+}
+
+.nd.act {
+    cursor: pointer
+}
+
+.nd.act:hover .n {
+    stroke-width: 4
+}
+
+.ctl {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px
+}
+
+.res {
+    font: 700 1.2rem Georgia, serif;
+    margin-top: 12px
+}
+
+.note {
+    color: var(--mute);
+    font-size: .9rem;
+    margin: 6px 0 0
+}
+
+.warn {
+    color: var(--acc);
+    font-weight: 700
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+    color: var(--mute);
+    font-size: .9rem;
+    border-top: 1.5px solid var(--line)
+}
